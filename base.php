@@ -11,8 +11,14 @@
     do_action('get_header');
     // Use Bootstrap's navbar if enabled in config.php
     if (current_theme_supports('bootstrap-top-navbar')) {
-      get_template_part('templates/header-top-navbar');
-    } else {
+      // check if it's the front page if it is get the custom header
+      if (is_page( 'Home' )) {
+        get_template_part('templates/header-front-page')
+      }else {
+        get_template_part('templates/header-top-navbar');
+      }
+    } 
+    else {
       get_template_part('templates/header');
     }
   ?>
