@@ -1,5 +1,5 @@
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
-  <div class="container" <?php 
+  <div class="container-fluid" <?php 
     if(is_page('Home')): 
       echo 'id="front-page-header"'; 
       endif; 
