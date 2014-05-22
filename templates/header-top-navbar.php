@@ -21,5 +21,8 @@
         endif;
       ?>
     </nav>
+    <?php if(is_page('Home')): ?>
+      <div class="value-header"><h1> Fufilment from China 2.99 per package</h1></div>
+    <?php endif; ?>
   </div>
 </header>
