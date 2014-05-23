@@ -40,8 +40,8 @@
           <input type="email" class="form-control" id="exampleInputEmail2" placeholder="2in">
         </div>
       </div>
-      <div class="form-btn col-md-2">
-      <button type="submit" class="btn btn-default">Get Estimate</button>
+      <div class="form-btn col-md-4">
+      <button type="submit" class="btn btn-warning">Get Estimate</button>
     </div>
     </form>
     </div>
