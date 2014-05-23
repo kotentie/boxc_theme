@@ -1,9 +1,9 @@
+<?php if(is_page('Home')): 
+  get_template_part('templates/header-front-page');
+?>
+<?php else:?>
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
-  <div class="container-fluid" <?php 
-    if(is_page('Home')): 
-      echo 'id="front-page-header"'; 
-      endif; 
-      ?>>
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -21,8 +21,8 @@
         endif;
       ?>
     </nav>
-    <?php if(is_page('Home')): ?>
-      <div class="value-header"><h1> Fufilment from China. <br> $2.99 per package</h1></div>
-    <?php endif; ?>
   </div>
 </header>
+<?php endif; ?>
+
+
