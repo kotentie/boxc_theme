@@ -23,21 +23,21 @@
     <div class="row form-container">
     <form class="form-inline" role="form">
       <div class="form-group form-weight col-md-3">
-        <label class="form-label" for="exampleInputEmail2">Weight</label>
-        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="2.5 lbs">
+        <label class="form-label" for="package-weight">Weight</label>
+        <input type="text" class="form-control" id="package-weight" placeholder="2.5 lbs">
       </div>
       <div class="form-size col-md-4">
         <div class="form-group">
-          <label class="form-label" for="exampleInputEmail2">Package Size</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="2in">
+          <label class="form-label" for="package-d0">Package Size</label>
+          <input type="text" class="form-control" id="package-d0" placeholder="2in">
         </div>
         <div class="form-group form-size">
-          <label class="form-label" for="exampleInputEmail2"> X </label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="2in">
+          <label class="form-label" for="package-d1"> X </label>
+          <input type="text" class="form-control" id="packages-d1" placeholder="2in">
         </div>
         <div class="form-group form-size">
-          <label class="form-label" for="exampleInputEmail2"> X </label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="2in">
+          <label class="form-label" for="package-d2"> X </label>
+          <input type="text" class="form-control" id="package-d2" placeholder="2in">
         </div>
       </div>
       <div class="form-btn col-md-4">
