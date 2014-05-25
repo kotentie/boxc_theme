@@ -17,7 +17,13 @@
 			</div>
 		</div>
 	</div>
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+	<div class="row">
+    	<div class="footer-copy col-md-5">
+    		<div class="footer-text">
+    			<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights Reserved. | TOS | Privacy | Sitemap</p>
+  			</div>
+  		</div>
+  	</div>
   </div>
 </footer>
 <?php wp_footer(); ?>
