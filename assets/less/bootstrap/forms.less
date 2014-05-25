@@ -334,16 +334,6 @@ input[type="checkbox"],
 
 .form-inline {
 
-  // Add color
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  float:none;
-
-  label {
-    color: @inline-form-color;
-  }
-
   // Kick in the inline
   @media (min-width: @screen-sm-min) {
     // Inline-block all the things for "inline"
@@ -356,7 +346,7 @@ input[type="checkbox"],
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
-      // width: auto;  Prevent labels from stacking above inputs in `.form-group`
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
       vertical-align: middle;
     }
     // Input groups need that 100% width though
@@ -446,28 +436,3 @@ input[type="checkbox"],
     right: (@grid-gutter-width / 2);
   }
 }
-
-  // Front Page Form
-
-  .form-container {
-    background-color: @inline-form-bg-color;
-    postion: absolute;
-    padding: 20px 0px;
-
-  }
-
-  .form-weight input{
-    width:50%;
-
-  }
-
-  .form-size input{
-    width:50px;
-
-  }
-
-  .form-btn button{
-  float: right;
-  width: 80%;
-  }
-
