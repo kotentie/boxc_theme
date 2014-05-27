@@ -22,27 +22,19 @@
    <div class="container-fluid">
     <div class="row form-container">
     <form class="form-inline" role="form">
-      <div class="form-group form-weight col-md-3">
+      <div class="form-group form-weight">
         <label class="form-label" for="package-weight">Weight</label>
         <input type="text" class="form-control" id="package-weight" placeholder="2.5 lbs">
       </div>
-      <div class="form-size col-md-4">
-        <div class="form-group">
+        <div class="form-group form-size">
           <label class="form-label" for="package-d0">Package Size</label>
           <input type="text" class="form-control" id="package-d0" placeholder="2in">
-        </div>
-        <div class="form-group form-size">
           <label class="form-label" for="package-d1"> X </label>
           <input type="text" class="form-control" id="packages-d1" placeholder="2in">
-        </div>
-        <div class="form-group form-size">
-          <label class="form-label" for="package-d2"> X </label>
+           <label class="form-label" for="package-d2"> X </label>
           <input type="text" class="form-control" id="package-d2" placeholder="2in">
         </div>
-      </div>
-      <div class="form-btn col-md-4">
       <button type="submit" class="btn btn-warning">Get Estimate</button>
-    </div>
     </form>
     </div>
   </div>
