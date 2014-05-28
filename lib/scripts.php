@@ -11,6 +11,8 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
+  wp_register_style('google_font', 'http://fonts.googleapis.com/css?family=Montserrat');
+  wp_enqueue_style('google_font');
   wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '99068d3e04d5210b96d7b57d9503bcb0');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
