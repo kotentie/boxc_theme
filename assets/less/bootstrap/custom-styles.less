@@ -103,6 +103,43 @@
   }
 }
 
+
+// Contact Form
+  
+.form-horizontal {
+
+  padding: 40px 0px;
+  width: 650px;
+  background-color: #EEE;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+
+  .form-group {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 280px;
+
+    label {
+      float:none;
+      white-space: nowrap;
+    }
+
+    .form-input-textarea textarea{
+    width: 600px;
+    height: 300px;
+    }
+
+  }
+
+  
+  .form-button {
+  float: right;
+  padding-right: 30px;
+  }
+}
+  
+
 // 
 // Navbars
 //
@@ -111,6 +148,13 @@
 // Main Nav
 
  // Uncollapse the nav
+
+ .navbar-container{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+
+ }
  
  .navbar-nav {
 
@@ -152,8 +196,6 @@ color: @navbar-front-page-link-color;
 
 .footer-container {
   
-  border-top: 1px solid;
-  border-color: #5c5c5c;
   background-color: #bdbdbd;
   margin-top: 20px;
 
@@ -223,11 +265,13 @@ color: @navbar-front-page-link-color;
 
 
 //
-// Content
+// Body
 //
 
+// Front-Page
+
 .explainer-container {
-  width: 700px;
+  width: 1000px;
   margin-right: auto;
   margin-left: auto;
   float: none;
@@ -251,7 +295,46 @@ color: @navbar-front-page-link-color;
     margin-left: auto;
     float: none;
     text-align: center;
+}
+
+// Headings
+
+.heading-text {
+
+  text-align: center;
+  padding-bottom: 20px;
 
 } 
+
+.sub-heading-text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+//Address
+
+.address-container {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+
+  .address-text {
+
+    h2 {
+      text-align: center;
+      padding-bottom: 10px; 
+    }
+
+    h4 {
+      padding: 0px 20px;
+    }
+
+    .align-right h4{
+      text-align: right;
+    }
+
+  }
+}
 
 
