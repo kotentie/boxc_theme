@@ -18,7 +18,13 @@
   ?>
 
   <div class="wrap container-fluid" role="document">
-    <div class="content row">
+    <div class=  
+    <?php if(is_page('Home')): ?> 
+      "content row home"
+     <?php else: ?> 
+       "content row"
+      <?php endif ?>
+      >
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->

@@ -13,7 +13,7 @@
 function roots_scripts() {
   wp_register_style('google_font', 'http://fonts.googleapis.com/css?family=Montserrat');
   wp_enqueue_style('google_font');
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'fe792fe47ada93996be3cc0d3232339b');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'ad2958a0d3c5b0a0aa1ec86d3edb166a');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
