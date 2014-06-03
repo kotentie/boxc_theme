@@ -19,7 +19,15 @@
         ?>
       </nav>
     </div>
-      <div class="value-header"><h1> Fufillment From China <br> $2.99 per package</h1></div>
+      <div class="value-header">
+        <h1> Fufillment From China <br> $2.99 per package</h1>
+      </div>
+      <div class="slide-buttons">
+        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-1"></a>
+        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-2"></a>
+        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-3"></a>
+        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-4"></a>
+      </div>
   </div>
    <div class="container-fluid">
     <div class="row form-container">

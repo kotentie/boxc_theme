@@ -29,6 +29,11 @@ var Roots = {
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+      $('.front-page-slide').click(function() {
+        $('#front-page-header').css("background", "url(wp-content/themes/boxc_theme/assets/img/" + this.id + ".jpeg) no-repeat center center"); 
+      });
+      
+
     }
   },
   // About us page, note the change from about-us to about_us.
