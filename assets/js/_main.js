@@ -32,8 +32,17 @@ var Roots = {
       $('.front-page-slide').click(function() {
         $('#front-page-header').css("background", "url(wp-content/themes/boxc_theme/assets/img/" + this.id + ".jpeg) no-repeat center center"); 
       });
-      
-
+      var totalSlides = $('.slide-buttons a').length
+      var slideCount = 0
+        setInterval(function(){
+          if(slideCount < totalSlides){
+            slideCount++;
+          }
+          else {
+            slideCount = 1;
+          }
+        $('#front-page-header').css("background", "url(wp-content/themes/boxc_theme/assets/img/slide-img-" + slideCount + ".jpeg) no-repeat center center"); 
+        }, 5000);
     }
   },
   // About us page, note the change from about-us to about_us.
