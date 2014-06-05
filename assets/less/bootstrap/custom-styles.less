@@ -96,7 +96,7 @@
     padding: 20px 0px;
 
     .form-inline {
-      width: 700px;
+      max-width: 700px;
     }
 
     .form-group {
@@ -126,7 +126,7 @@
 .form-horizontal {
 
   padding: 40px 0px;
-  width: 650px;
+  max-width: 650px;
   border: 1px solid #ddd;
   background-color: #f6f8f8;
   margin-left: auto;
@@ -144,7 +144,7 @@
     }
 
     .form-input-textarea textarea{
-    width: 600px;
+    max-width: 600px;
     height: 300px;
     }
 
@@ -211,7 +211,7 @@ color: @navbar-front-page-link-color;
   color: @navbar-front-page-link-color;
   margin-left: 8.33%;
   margin-top: 100px;
-  width: 42%;
+  max-width: 450px;
 
 }
 
@@ -241,7 +241,7 @@ color: @navbar-front-page-link-color;
       float: none;
       margin-right: auto;
       margin-left: auto;
-      width: 430px;
+      max-width: 430px;
 
       .footer-links {
             width: 100px;
@@ -252,8 +252,6 @@ color: @navbar-front-page-link-color;
        
        h5 {
           padding-left: 6px;
-          border-bottom: 1px solid;
-          border-color: #d8d8d8;
           margin: 0px;
           padding-bottom: 3px;
           color: #5c5c5c;
@@ -280,7 +278,7 @@ color: @navbar-front-page-link-color;
     margin-right: auto;
     margin-left: auto;
     float: none;
-    width: 410px;
+    max-width: 410px;
     white-space: nowrap;
 
       .footer-text{ 
@@ -305,7 +303,7 @@ color: @navbar-front-page-link-color;
 //
 
 .content{
-  width: 1000px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -319,10 +317,12 @@ color: @navbar-front-page-link-color;
   text-decoration: underline;
 }
 
+
+
 // Front-Page
 
 .explainer-container {
-  width: 700px;
+  max-width: 700px;
   margin-right: auto;
   margin-left: auto;
   float: none;
@@ -347,7 +347,7 @@ color: @navbar-front-page-link-color;
  .featured-in {
     margin-top: 40px;
     margin-bottom: 40px;
-    width: 800px;
+    max-width: 800px;
     margin-right: auto;
     margin-left: auto;
     float: none;
@@ -372,26 +372,25 @@ color: @navbar-front-page-link-color;
 //Address
 
 .address-container {
-  width: 900px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 40px;
 
+  .add-right {
+      padding-left: 40px;
+    }
+
   .address-text {
 
     h2 {
-      text-align: center;
+      text-align: left;
       padding-bottom: 10px; 
     }
 
     h4 {
-      padding: 0px 20px;
+      padding: 0px;
     }
-
-    .align-right h4{
-      text-align: right;
-    }
-
   }
 }
 
@@ -400,6 +399,10 @@ color: @navbar-front-page-link-color;
 .profiles-container {
   padding-bottom: 20px;
 
+}
+
+.profile .thumbnail .img-responsive {
+  padding-top: 29px;
 }
 
 
