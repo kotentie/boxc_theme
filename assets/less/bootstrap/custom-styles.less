@@ -322,18 +322,25 @@ color: @navbar-front-page-link-color;
 // Front-Page
 
 .explainer-container {
+  width: 700px;
   margin-right: auto;
   margin-left: auto;
   float: none;
-  padding-bottom: 40px;
-  padding-top: 40px; 
+  padding-bottom: 20px;
+  padding-top: 20px; 
 
-
+  + .explainer-container{
+    border-top: 1px solid #f6f8f8;
+  }
 
   .img-right img{
   float: right;
   }
 
+}
+
+.explainer-img-lft img{
+  float: left;
 }
 
 

@@ -20,7 +20,7 @@
       </nav>
     </div>
       <div class="value-header">
-        <h1> Fufillment From China <br> $2.99 per package</h1>
+        <h2> 3-5 day fufillment from China <br> Starting at $2.99 per package</h2>
       </div>
       <div class="slide-buttons">
         <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-1"></a>
