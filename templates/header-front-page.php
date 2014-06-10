@@ -19,15 +19,31 @@
         ?>
       </nav>
     </div>
+    <div class="row arrow-nav">
+        <span class="glyphicon glyphicon-chevron-left" id="slide-back"> </span>
+        <span class="glyphicon glyphicon-chevron-right arrow-right" id="slide-forward"></span>
+    </div>
       <div class="value-header">
         <h2> 3-5 day fufillment from China <br> Starting at $2.99 per package</h2>
       </div>
-      <div class="slide-buttons">
-        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-1"></a>
-        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-2"></a>
-        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-3"></a>
-        <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-4"></a>
+      <div class="row testimonial-container">
+        <div class="testimonial" id="testimonial-1">
+            <h4>Fulfillment by Boxc helps us focus on innovation and providing a better customer experience"</h4>
+            <p>-Adam Schwartz, FresheTech.com</p>
+        </div>
+         <div class="testimonial" style="display:none" id="testimonial-2">
+            <h4>"By shipping directly with Boxc we have saved thousands of dollars and fulfilled orders faster than ever before"</h4>
+            <p>-Shaun Nath, THEUTLAB.com</p>
+        </div>
       </div>
+      <div class="row slide-button-container">
+        <div class="slide-buttons">
+          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-1"></a>
+          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-2"></a>
+          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-3"></a>
+          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-4"></a>
+        </div>
+    </div>
   </div>
    <div class="container-fluid">
     <div class="row form-container">

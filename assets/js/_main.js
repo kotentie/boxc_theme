@@ -29,20 +29,44 @@ var Roots = {
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+       var totalSlides = $('.slide-buttons a').length;
+       var currentSlide = 1;
+
       $('.front-page-slide').click(function() {
-        $('#front-page-header').css("background", "url(wp-content/themes/boxc_theme/assets/img/" + this.id + ".jpeg) no-repeat center center"); 
+        $('#front-page-header').css({"background": "url(wp-content/themes/boxc_theme/assets/img/" + this.id + ".jpeg) no-repeat center center",   "background-size" : "cover"});
+        slideCount = this.id.replace(/\D/g,'');
+        $('.testimonial').css('display','none');
+        $('#testimonial-' + slideCount + '').css('display', 'block');
       });
-      var totalSlides = $('.slide-buttons a').length
-      var slideCount = 0
-        setInterval(function(){
-          if(slideCount < totalSlides){
-            slideCount++;
-          }
-          else {
-            slideCount = 1;
-          }
-        $('#front-page-header').css("background", "url(wp-content/themes/boxc_theme/assets/img/slide-img-" + slideCount + ".jpeg) no-repeat center center"); 
-        }, 5000);
+
+      $('.arrow-nav span').click(function() {
+        if(this.id === "slide-forward" && currentSlide < totalSlides){
+          currentSlide ++;
+        }else if(currentSlide === totalSlides) {
+          currentSlide = 1;
+        }else if(currentSlide === 1 && this.id === "slide-back"){
+          currentSlide = totalSlides;
+        }
+        else{
+          currentSlide --;
+        }
+        $('#front-page-header').css({"background": "url(wp-content/themes/boxc_theme/assets/img/slide-img-" + currentSlide + ".jpeg) no-repeat center center",   "background-size" : "cover"});
+        $('.testimonial').css('display','none');
+        $('#testimonial-' + currentSlide + '').css('display', 'block');
+      });
+
+      // var slideCount = 0
+      //   setInterval(function(){
+      //     if(slideCount < totalSlides){
+      //       slideCount++;
+      //     }
+      //     else {
+      //       slideCount = 1;
+      //     }
+      //   $('#front-page-header').css({"background" : "url(wp-content/themes/boxc_theme/assets/img/slide-img-" + slideCount + ".jpeg) no-repeat center center",   "background-size" : "cover"}); 
+      //   $('.testimonial').css('display','none');
+      //   $('#testimonial-' + slideCount + '').css('display', 'block');
+      //   }, 5000);
     }
   },
   // About us page, note the change from about-us to about_us.

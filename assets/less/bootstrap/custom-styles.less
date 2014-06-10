@@ -96,7 +96,7 @@
     padding: 20px 0px;
 
     .form-inline {
-      max-width: 700px;
+      width: 700px;
     }
 
     .form-group {
@@ -126,7 +126,7 @@
 .form-horizontal {
 
   padding: 40px 0px;
-  max-width: 650px;
+  max-width: 800px;
   border: 1px solid #ddd;
   background-color: #f6f8f8;
   margin-left: auto;
@@ -136,7 +136,6 @@
   .form-group {
   padding-left: 40px;
   padding-right: 40px;
-  width: 280px;
 
     label {
       float:none;
@@ -144,7 +143,7 @@
     }
 
     .form-input-textarea textarea{
-    max-width: 600px;
+    width: 760px;
     height: 300px;
     }
 
@@ -196,11 +195,13 @@ border-bottom: 1px solid gray;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 360px;
-  -webkit-transition: background 1s ease-in-out;
-  -moz-transition: background 1s ease-in-out;
-  -o-transition: background 1s ease-in-out;
-  transition: background 1s ease-in-out;
+  height: 500px;
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background .025s ease;
+  -o-transition: background .025s ease;
+  transition: background .025s ease;
+  text-shadow: 0px 2px 2px rgba(64,64,64, 0.6);
+  position: relative;
 }
 
 #front-page-header a{
@@ -210,17 +211,61 @@ color: @navbar-front-page-link-color;
 #front-page-header .value-header{
   color: @navbar-front-page-link-color;
   margin-left: 8.33%;
-  margin-top: 100px;
+  margin-top: 150px;
   max-width: 450px;
+  padding-bottom: 60px;
 
 }
 
 .slide-buttons {
-
   width: 90px;
+  display: none;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 70px;
+}
+
+.arrow-nav {
+  color: @navbar-front-page-link-color;
+  font-size: 24px;
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  width: 98%;
+  display: inline;
+  
+  :hover {
+    color: gray;
+  }
+
+  .arrow-right {
+    float: right;
+  }
+
+}
+
+
+.testimonial-container{
+  padding-bottom: 10px;
+  margin: 0px;
+
+  h4, p{
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+  }
+
+  h4 {
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+}
+
+.testimonial{
+  float: right;
+  width: 300px;
+  background-color: rgba(64,64,64, 0.6);
+  margin-right: 4.33%;
+  color: @navbar-front-page-link-color;
 }
 
 
@@ -301,6 +346,10 @@ color: @navbar-front-page-link-color;
 //
 // Body
 //
+
+.page {
+  min-width: 800px;
+}
 
 .content{
   max-width: 1000px;
