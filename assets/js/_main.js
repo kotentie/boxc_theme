@@ -70,9 +70,97 @@ var Roots = {
     }
   },
   // About us page, note the change from about-us to about_us.
-  about_us: {
+  estimate: {
     init: function() {
       // JavaScript to be fired on the about us page
+
+          estimatePrice();
+          function estimatePrice(){
+
+          var boxcApi = {"C000":{"Service_Code":"C000","Service_Type":"PACK","Service":"PICK & PACK","Rate":"0.42 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C001":{"Service_Code":"C001","Service_Type":"PACK","Service":"BOXC PACKAGING","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no","options":[{"option":"C001-P01","name":"BOXC PACKAGING","rate":"0.00"},{"option":"C001-P02","name":"YOUR PACKAGING","rate":"0.02"},{"option":"C001-P03","name":"SUPER DUPER PACKAGING","rate":"0.10"}]},"C002":{"Service_Code":"C002","Service_Type":"SHIP","Service":"IMPORT","Rate":"1.99","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C003":{"Service_Code":"C003","Service_Type":"SHIP","Service":"US DELIVERY","Rate":"2.99 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C004":{"Service_Code":"C004","Service_Type":"SHIP","Service":"INSURANCE","Rate":"0.00","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"yes"},"C005":{"Service_Code":"C005","Service_Type":"WAREHOUSE","Service":"STORAGE","Rate":"0.13","Unit":"PER SKU","Cycle":"MONTHLY","Optional":"no"},"C006":{"Service_Code":"C006","Service_Type":"WAREHOUSE","Service":"PRODUCT PHOTOS","Rate":"5.00","Unit":"PER SKU","Cycle":"ONCE","Optional":"yes"}};
+
+          var cycleSumObj = {};
+          var cycleArr = [];
+
+          function fillCycleArr(){
+              $.each(boxcApi, function(i, item){
+                  cycleArr.push(boxcApi[i].Cycle);
+              });
+              cycleArr = $.unique(cycleArr);
+              $.each(cycleArr, function(i, item){
+                  $('#totals-table').append('<tr><td><div class="service_name"><h5>' + cycleArr[i] +'</h5> </div></td><td><div class="price"><h5 id=' + cycleArr[i].replace(/\s+/g, '') +'-price></h5></div></td></tr>');
+                  cycleSumObj[item] = 0;
+
+              });
+          }
+
+
+          function sumCycleSumObj() {
+
+            $( "input:checked").each(function () {
+                     var cycle = $(this).attr("data-cycle");
+                     var rate = parseFloat($(this).attr("data-rate"));
+                      cycleSumObj[cycle] += rate;
+                      cycleSumObj[cycle] = Math.round(cycleSumObj[cycle] * 100)/100;
+                  });
+            
+              $.each(cycleArr, function(i, item){
+                  var cycleCleaned = item.replace(/\s+/g, '');
+                  $('#' + cycleCleaned + '-price' ).text('' + cycleSumObj[item] + '');
+                  cycleSumObj[item] = 0;
+                  });
+
+          }
+
+          function addHtml(){
+
+          $.each(boxcApi, function(i, item){
+              var servicetypeClass = boxcApi[i].Service_Type.toLowerCase(),
+                                     optional;
+              var servicetypeId = document.getElementById('' + servicetypeClass + '');
+              if(servicetypeId === null){
+                  $('#services-area').append('<div class="table_heading" id="' + servicetypeClass + '"><h3>' + servicetypeClass + '</h3></div><table id="' + servicetypeClass + '-table" class="table table-striped"><tbody></tbody></table>');
+              }
+
+              if (boxcApi[i]['options']){
+                  
+                  nObjects = boxcApi[i].options.length;
+                  $('#' + servicetypeClass + '-table tbody').append('<tr class ="'+ servicetypeClass +'"><td><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" height="16" width="16"></td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td></td></tr>');
+                  
+                  for (var a =0; a < nObjects; a++){
+                      $('.' + servicetypeClass).after('<tr class ="multi-options"><td><div class="radio"><input type="radio" name="' + boxcApi[i].options[a].ServiceCode + '"  data-rate="' + boxcApi[i].options[a].rate + '" data-cycle="' + boxcApi[i].Cycle + '"></div></td><td><div class="sub-subservice-name"><h6>' + boxcApi[i].options[a].name  + '</h6></div></td><td><div class="price ' + boxcApi[i].Cycle + '"><h5 class="rate-unit">' + boxcApi[i].options[a].rate + " " + boxcApi[i].Unit + '</h5></div></td></tr>');
+            
+                  } 
+              }
+              else{
+
+                if (boxcApi[i].Optional === "yes"){
+                    optional = '<div class="checkbox"><input type="checkbox" class="checkedbox" name="' + boxcApi[i].Service_Code + '" data-rate ="' + boxcApi[i].Rate + '" data-cycle ="' + boxcApi[i].Cycle + '"></div>';
+                } 
+                else {
+                    optional = '<input type="checkbox" name="' + boxcApi[i].Service_Code + '" class="checkedbox" style="display:none" value="checked" checked="checked" data-rate="' + boxcApi[i].Rate + '"data-cycle ="' + boxcApi[i].Cycle + '"><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" alt="checkbox ticked" height="16" width="16">';
+                }
+                 $('#' + servicetypeClass + '-table tbody').append('<tr><td>' + optional + '</td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td><h5 class="rate-unit">' + boxcApi[i].Rate + " " + boxcApi[i].Unit + '</h5></div></td></tr>' );
+                }  
+            })
+          }
+          addHtml();
+          fillCycleArr();
+          sumCycleSumObj();
+
+          $('input[type=radio]').change(function() {
+              sumCycleSumObj();
+              
+          })
+
+
+
+          $('input[type=checkbox]').change(function () {
+              
+              sumCycleSumObj();
+          })
+      }
+
     }
   }
 };
