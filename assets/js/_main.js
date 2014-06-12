@@ -75,12 +75,25 @@ var Roots = {
       // JavaScript to be fired on the about us page
 
           estimatePrice();
+
           function estimatePrice(){
 
           var boxcApi = {"C000":{"Service_Code":"C000","Service_Type":"PACK","Service":"PICK & PACK","Rate":"0.42 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C001":{"Service_Code":"C001","Service_Type":"PACK","Service":"BOXC PACKAGING","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no","options":[{"option":"C001-P01","name":"BOXC PACKAGING","rate":"0.00"},{"option":"C001-P02","name":"YOUR PACKAGING","rate":"0.02"},{"option":"C001-P03","name":"SUPER DUPER PACKAGING","rate":"0.10"}]},"C002":{"Service_Code":"C002","Service_Type":"SHIP","Service":"IMPORT","Rate":"1.99","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C003":{"Service_Code":"C003","Service_Type":"SHIP","Service":"US DELIVERY","Rate":"2.99 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C004":{"Service_Code":"C004","Service_Type":"SHIP","Service":"INSURANCE","Rate":"0.00","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"yes"},"C005":{"Service_Code":"C005","Service_Type":"WAREHOUSE","Service":"STORAGE","Rate":"0.13","Unit":"PER SKU","Cycle":"MONTHLY","Optional":"no"},"C006":{"Service_Code":"C006","Service_Type":"WAREHOUSE","Service":"PRODUCT PHOTOS","Rate":"5.00","Unit":"PER SKU","Cycle":"ONCE","Optional":"yes"}};
 
           var cycleSumObj = {};
           var cycleArr = [];
+
+
+          Number.prototype.formatMoney = function(c, d, t){
+            var n = this, 
+                c = isNaN(c = Math.abs(c)) ? 2 : c, 
+                d = d == undefined ? "." : d, 
+                t = t == undefined ? "," : t, 
+                s = n < 0 ? "-" : "", 
+                i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+                j = (j = i.length) > 3 ? j % 3 : 0;
+               return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+             };
 
           function fillCycleArr(){
               $.each(boxcApi, function(i, item){
@@ -92,7 +105,7 @@ var Roots = {
                   cycleSumObj[item] = 0;
 
               });
-          }
+          };
 
 
           function sumCycleSumObj() {
@@ -101,12 +114,11 @@ var Roots = {
                      var cycle = $(this).attr("data-cycle");
                      var rate = parseFloat($(this).attr("data-rate"));
                       cycleSumObj[cycle] += rate;
-                      cycleSumObj[cycle] = Math.round(cycleSumObj[cycle] * 100)/100;
                   });
             
               $.each(cycleArr, function(i, item){
                   var cycleCleaned = item.replace(/\s+/g, '');
-                  $('#' + cycleCleaned + '-price' ).text('' + cycleSumObj[item] + '');
+                  $('#' + cycleCleaned + '-price' ).text('$' + cycleSumObj[item].formatMoney(2) + '');
                   cycleSumObj[item] = 0;
                   });
 
