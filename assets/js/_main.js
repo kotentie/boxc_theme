@@ -105,15 +105,20 @@ var Roots = {
                   cycleSumObj[item] = 0;
 
               });
-          };
-
+          }
 
           function sumCycleSumObj() {
 
             $( "input:checked").each(function () {
                      var cycle = $(this).attr("data-cycle");
                      var rate = parseFloat($(this).attr("data-rate"));
-                      cycleSumObj[cycle] += rate;
+                     var numItems = $('#pkg-total').attr("data-total");
+                     if(cycle === "MONTHLY"){
+                        cycleSumObj[cycle] += rate * numItems;
+                     }
+                     else{
+                       cycleSumObj[cycle] += rate;
+                    }
                   });
             
               $.each(cycleArr, function(i, item){
