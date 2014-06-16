@@ -142,10 +142,10 @@ var Roots = {
               if (boxcApi[i]['options']){
                   
                   nObjects = boxcApi[i].options.length;
-                  $('#' + servicetypeClass + '-table tbody').append('<tr class ="'+ servicetypeClass +'"><td><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" height="16" width="16"></td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td></td></tr>');
+                  $('#' + servicetypeClass + '-table tbody').append('<tr class ="'+ servicetypeClass +'"><td><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" height="16" width="16"></td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td></td><td></td></tr>');
                   
                   for (var a =0; a < nObjects; a++){
-                      $('.' + servicetypeClass).after('<tr class ="multi-options"><td><div class="radio"><input type="radio" name="' + boxcApi[i].options[a].ServiceCode + '"  data-rate="' + boxcApi[i].options[a].rate + '" data-cycle="' + boxcApi[i].Cycle + '"></div></td><td><div class="sub-subservice-name"><h6>' + boxcApi[i].options[a].name  + '</h6></div></td><td><div class="price ' + boxcApi[i].Cycle + '"><h5 class="rate-unit">' + boxcApi[i].options[a].rate + " " + boxcApi[i].Unit + '</h5></div></td></tr>');
+                      $('.' + servicetypeClass).after('<tr class ="multi-options"><td><div class="radio"><input type="radio" name="' + boxcApi[i].options[a].option + '"  data-rate="' + boxcApi[i].options[a].rate + '" data-cycle="' + boxcApi[i].Cycle + '"></div></td><td><div class="sub-subservice-name"><h6>' + boxcApi[i].options[a].name  + '</h6></div></td><td><div class="unit-value"><h6>'+ boxcApi[i].Unit +'</h6></div></td><td><div class="price ' + boxcApi[i].Cycle + '"><h5 class="rate-unit"> $' + boxcApi[i].options[a].rate + '</h5></div></td></tr>');
             
                   } 
               }
@@ -157,7 +157,7 @@ var Roots = {
                 else {
                     optional = '<input type="checkbox" name="' + boxcApi[i].Service_Code + '" class="checkedbox" style="display:none" value="checked" checked="checked" data-rate="' + boxcApi[i].Rate + '"data-cycle ="' + boxcApi[i].Cycle + '"><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" alt="checkbox ticked" height="16" width="16">';
                 }
-                 $('#' + servicetypeClass + '-table tbody').append('<tr><td>' + optional + '</td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td><h5 class="rate-unit">' + boxcApi[i].Rate + " " + boxcApi[i].Unit + '</h5></div></td></tr>' );
+                 $('#' + servicetypeClass + '-table tbody').append('<tr><td>' + optional + '</td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td><div class="unit-value"><h6>'+ boxcApi[i].Unit +'</h6></div></td><td><h5 class="rate-unit"> $' + boxcApi[i].Rate + '</h5></div></td></tr>' );
                 }  
             })
           }
@@ -168,14 +168,23 @@ var Roots = {
           $('input[type=radio]').change(function() {
               sumCycleSumObj();
               
-          })
+          });
 
+          $('#sign-up-btn').click(function(){
+            serviceCodeArray = [];
+            $( "input:checked").each(function () {
+              var name = $(this).attr("name");
+              serviceCodeArray.push(name);
+              });
+              document.cookie = serviceCodeArray;
+              alert(document.cookie);
+            });
 
 
           $('input[type=checkbox]').change(function () {
               
               sumCycleSumObj();
-          })
+          });
       }
 
     }
