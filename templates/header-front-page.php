@@ -47,20 +47,20 @@
   </div>
    <div class="container-fluid">
     <div class="row form-container">
-    <form class="form-inline" role="form" action="/estimate">
+    <form class="form-inline" role="form" action="/estimate" method="get">
       <div class="form-group form-weight">
         <label class="form-label" for="package-weight">Weight</label>
-        <input type="text" class="form-control" id="package-weight" placeholder="2.5 lbs">
+        <input type="text" class="form-control" id="package-weight" name="weight" placeholder="2.5 lbs">
       </div>
         <div class="form-group form-size">
           <label class="form-label" for="package-d0">Package Size</label>
-          <input type="text" class="form-control" id="package-d0" placeholder="2in">
+          <input type="text" class="form-control" id="package-d0" name="d0" placeholder="2in">
           <label class="form-label" for="package-d1"> X </label>
-          <input type="text" class="form-control" id="packages-d1" placeholder="2in">
+          <input type="text" class="form-control" id="packages-d1" name="d1" placeholder="2in">
            <label class="form-label" for="package-d2"> X </label>
-          <input type="text" class="form-control" id="package-d2" placeholder="2in">
+          <input type="text" class="form-control" id="package-d2" name="d2" placeholder="2in">
         </div>
-      <button type="submit" class="btn btn-warning">Get Estimate</button>
+      <button type="submit" value="submit" class="btn btn-warning">Get Estimate</button>
     </form>
     </div>
   </div>
