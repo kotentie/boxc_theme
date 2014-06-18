@@ -1,65 +1,139 @@
 <div class="page-body">
-    <div class="row estimator-container">
+    <div class="estimator-container">
         <div class="heading-text">
-        <h1>Boxc Services</h1>
+            <h1>Boxc Services</h1>
         </div>
-    <div class="row">
-        <div class="services-explainer col-xs-8">
-            <h5>gravida ipsum nec, hendrerit leo. Nunc pharetra, neque quis dignissim blandit, enim augue tincidunt massa, feugiat elementum tortor eros nec justo. Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</h5>
-        </div>
-         <div class="panel panel-primary col-xs-8">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Quote for Packages with</h3>
-                </div>
-                <div class="panel-body">
-                    <table class="table ">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <h5 id="pkg-total" data-total="30">Count: 30 packages</h5>
-                                </td>
-                                <td>
-                                    <h5>Size: 3in x 4in x 12in</h5>
-                                </td>
-                                 <td>
-                                    <h5> Weight: 2 lbs.</h5>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-    </div>
-        <div class="row">
-            <div class="service_menu col-xs-8" id="services-area">
-            </div>
-            <div class="totals_table col-xs-4">
-                <div class="table_heading"> 
-                    <h3 class="totals-title">Totals</h3> 
-                </div>
-                <table class="table table-striped" id="totals-table">
-                </table>
-            </div>
-            <div class="col-xs-4">
-                <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Sign Up</h3>
-                </div>
-                <div class="panel-body">
-                        <form role="form">
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#fbb" data-toggle="tab">Fulfillment by Boxc</a></li>
+              <li><a href="#fbs" data-toggle="tab">Fulfillment by Suppilier</a></li>
+              <li><a href="#bulk" data-toggle="tab">Bulk Ship</a></li>
+              <li><a href="#ustochina" data-toggle="tab">US to China</a></li>
+          </ul>
+          <div class="tab-content container">
+              <div class="tab-pane active" id="fbb">
+                    <div class="row">
+                        <div class="services-explainer col-xs-8">
+                            <h5>gravida ipsum nec, hendrerit leo. Nunc pharetra, neque quis dignissim blandit, enim augue tincidunt massa, feugiat elementum tortor eros nec justo. Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</h5>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="col-xs-4 sign-up">
+                            <button class="btn btn-primary">Sign Up</button>
                         </div>
-                      <button id="sign-up-btn" class="btn btn-primary"> Sign Up!</button>
-                    </form>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default col-xs-4">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Estimate</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="form-group form-count clearfix">
+                                    <label for="pkg-total">Package Count</label>
+                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <div class="input-container">
+                                        <input type="text" class="form-control" id="pkg-total" data-total="1" value="1">
+                                    </div>
+                                  </div>
+                                  <div class="form-group form-weight clearfix">
+                                    <label for="pkg-weight">Package Weight</label>
+                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <div class="input-container">
+                                        <input type="text" class="form-control" id="pkg-weight" data-weight="2" value="2 lbs">
+                                    </div>
+                                  </div>
+                                  <div class="form-group form-size clearfix">
+                                      <label class="form-label" for="pkg-d0">Package Size</label>
+                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <div class="input-container">  
+                                          <input type="text" class="form-control" id="pkg-d0" name="d0" value="2in">
+                                          <label class="form-label" for="pkg-d1"> X </label>
+                                          <input type="text" class="form-control" id="pkgs-d1" name="d1" value="2in">
+                                           <label class="form-label" for="pkg-d2"> X </label>
+                                          <input type="text" class="form-control" id="pkg-d2" name="d2" value="2in">
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-email">
+                                        <label for="email">Email (optional) </label>
+                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <div class="input-container">
+                                            <input type="text" class="form-control" id="email" placeholer="support@boxc.com">
+                                        </div>
+                                    </div>
+                                  <button type="submit" class="btn btn-primary">ReCalculate</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="totals_table col-xs-8">
+                            <div class="totals-container clearfix" id="totals-table">
+                            </div>
+                        </div>
+                        <div class="service_menu col-xs-8" id="services-area">
+                        </div>
                 </div>
-            </div>
-            </div>
-        </div>
+              </div>
+              <div class="tab-pane" id="fbs">
+                  <div class="row">
+                        <div class="services-explainer col-xs-8">
+                            <h5>gravida ipsum nec, hendrerit leo. Nunc pharetra, neque quis dignissim blandit, enim augue tincidunt massa, feugiat elementum tortor eros nec justo. Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</h5>
+                        </div>
+                        <div class="col-xs-4 sign-up">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default col-xs-4">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Estimate</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="form-group form-count clearfix">
+                                    <label for="pkg-total">Package Count</label>
+                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <div class="input-container">
+                                        <input type="text" class="form-control" id="pkg-total" data-total="1" value="1">
+                                    </div>
+                                  </div>
+                                  <div class="form-group form-weight clearfix">
+                                    <label for="pkg-weight">Package Weight</label>
+                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <div class="input-container">
+                                        <input type="text" class="form-control" id="pkg-weight" data-weight="2" value="2 lbs">
+                                    </div>
+                                  </div>
+                                  <div class="form-group form-size clearfix">
+                                      <label class="form-label" for="pkg-d0">Package Size</label>
+                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <div class="input-container">  
+                                          <input type="text" class="form-control" id="pkg-d0" name="d0" value="2in">
+                                          <label class="form-label" for="pkg-d1"> X </label>
+                                          <input type="text" class="form-control" id="pkgs-d1" name="d1" value="2in">
+                                           <label class="form-label" for="pkg-d2"> X </label>
+                                          <input type="text" class="form-control" id="pkg-d2" name="d2" value="2in">
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-email">
+                                        <label for="email">Email (optional) </label>
+                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <div class="input-container">
+                                            <input type="text" class="form-control" id="email" placeholer="support@boxc.com">
+                                        </div>
+                                    </div>
+                                  <button type="submit" class="btn btn-primary">ReCalculate</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="totals_table col-xs-8">
+                            <div class="totals-container" id="totals-table">
+                            </div>
+                        </div>
+                        <div class="service_menu col-xs-8" id="services-area">
+                        </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="bulk">Coming Soon</div>
+              <div class="tab-pane" id="ustochina">Soon</div>
+          </div>       
     </div>
-</div>   
+</div>
+
+

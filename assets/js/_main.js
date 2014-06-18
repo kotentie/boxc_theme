@@ -75,6 +75,25 @@ var Roots = {
       // JavaScript to be fired on the about us page
 
           estimatePrice();
+          function addUserVarsHtml(){
+            var urlParams;
+              (window.onpopstate = function () {
+                var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+
+                urlParams = {};
+                while (match = search.exec(query))
+                 urlParams[decode(match[1])] = decode(match[2]);
+             })();
+             var weight = "Weight:" + urlParams["weight"].match(/\d+$/)[0] + " lbs" ;
+             var size = "Size:" + urlParams["d0"].match(/\d+$/)[0] + " in " + urlParams["d1"].match(/\d+$/)[0] + " in " + urlParams["d2"].match(/\d+$/)[0] + " in ";
+             $('#pkg-size').text(size);
+             $('#pkg-weight').text(weight);
+
+          }
 
           function estimatePrice(){
 
@@ -101,7 +120,7 @@ var Roots = {
               });
               cycleArr = $.unique(cycleArr);
               $.each(cycleArr, function(i, item){
-                  $('#totals-table').append('<tr><td><div class="service_name"><h5>' + cycleArr[i] +'</h5> </div></td><td><div class="price"><h5 id=' + cycleArr[i].replace(/\s+/g, '') +'-price></h5></div></td></tr>');
+                  $('#totals-table').append('<table><tbody><tr><td><div class="price"><h4 id=' + cycleArr[i].replace(/\s+/g, '') +'-price></h4></div></td></tr><tr><td><div class="service_name"><h4>' + cycleArr[i] +'</h4> </div></td></tr></tbody></table>');
                   cycleSumObj[item] = 0;
 
               });
@@ -145,7 +164,7 @@ var Roots = {
                   $('#' + servicetypeClass + '-table tbody').append('<tr class ="'+ servicetypeClass +'"><td><img src="/wp-content/themes/boxc_theme/assets/img/tick.gif" height="16" width="16"></td><td><div class="service_name"><h5>' + boxcApi[i].Service + '</h5></div></td><td></td><td></td></tr>');
                   
                   for (var a =0; a < nObjects; a++){
-                      $('.' + servicetypeClass).after('<tr class ="multi-options"><td><div class="radio"><input type="radio" name="' + boxcApi[i].options[a].option + '"  data-rate="' + boxcApi[i].options[a].rate + '" data-cycle="' + boxcApi[i].Cycle + '"></div></td><td><div class="sub-subservice-name"><h6>' + boxcApi[i].options[a].name  + '</h6></div></td><td><div class="unit-value"><h6>'+ boxcApi[i].Unit +'</h6></div></td><td><div class="price ' + boxcApi[i].Cycle + '"><h5 class="rate-unit"> $' + boxcApi[i].options[a].rate + '</h5></div></td></tr>');
+                      $('.' + servicetypeClass).after('<tr class ="multi-options"><td><div class="radio"><input type="radio" data-servicecode="' + boxcApi[i].options[a].option + '" name="' + boxcApi[i].Service + '"  data-rate="' + boxcApi[i].options[a].rate + '" data-cycle="' + boxcApi[i].Cycle + '"></div></td><td><div class="sub-subservice-name"><h6>' + boxcApi[i].options[a].name  + '</h6></div></td><td><div class="unit-value"><h6>'+ boxcApi[i].Unit +'</h6></div></td><td><div class="price ' + boxcApi[i].Cycle + '"><h5 class="rate-unit"> $' + boxcApi[i].options[a].rate + '</h5></div></td></tr>');
             
                   } 
               }
@@ -185,6 +204,26 @@ var Roots = {
               
               sumCycleSumObj();
           });
+
+          $('#fbb a').click(function (e) {
+              e.preventDefault();
+              $(this).tab('show');
+            });
+
+          $('#fbs a').click(function (e) {
+              e.preventDefault();
+              $(this).tab('show');
+            });
+
+          $('#bulk a').click(function (e) {
+              e.preventDefault();
+              $(this).tab('show');
+            });
+
+           $('#ustochina a').click(function (e) {
+              e.preventDefault();
+              $(this).tab('show');
+            });
       }
 
     }
