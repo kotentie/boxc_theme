@@ -120,7 +120,7 @@ var Roots = {
               });
               cycleArr = $.unique(cycleArr);
               $.each(cycleArr, function(i, item){
-                  $('#totals-table').append('<table><tbody><tr><td><div class="price"><h4 id=' + cycleArr[i].replace(/\s+/g, '') +'-price></h4></div></td></tr><tr><td><div class="service_name"><h4>' + cycleArr[i] +'</h4> </div></td></tr></tbody></table>');
+                  $('#totals-table').append('<table><tbody><tr><td><div class="price"><h2 id=' + cycleArr[i].replace(/\s+/g, '') +'-price></h2></div></td></tr><tr><td><div class="service_name"><h4>' + cycleArr[i] +'</h4> </div></td></tr></tbody></table>');
                   cycleSumObj[item] = 0;
 
               });

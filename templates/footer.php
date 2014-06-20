@@ -18,6 +18,13 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="startups500">
+				<a href="http://500.co">
+					<img src="/wp-content/themes/boxc_theme/assets/img/footer-500startups.png">
+				</a>
+		</div>	
+	</div>
+	<div class="row">
     	<div class="footer-copy">
     		<div class="footer-text">
     			<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights Reserved. | TOS | Privacy | Sitemap</p>
