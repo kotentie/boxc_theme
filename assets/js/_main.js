@@ -35,8 +35,6 @@ var Roots = {
       $('.front-page-slide').click(function() {
         $('#front-page-header').css({"background": "url(wp-content/themes/boxc_theme/assets/img/" + this.id + ".jpeg) no-repeat center center",   "background-size" : "cover"});
         slideCount = this.id.replace(/\D/g,'');
-        $('.testimonial').css('display','none');
-        $('#testimonial-' + slideCount + '').css('display', 'block');
       });
 
       $('.arrow-nav span').click(function() {
@@ -51,8 +49,6 @@ var Roots = {
           currentSlide --;
         }
         $('#front-page-header').css({"background": "url(wp-content/themes/boxc_theme/assets/img/slide-img-" + currentSlide + ".jpeg) no-repeat center center",   "background-size" : "cover"});
-        $('.testimonial').css('display','none');
-        $('#testimonial-' + currentSlide + '').css('display', 'block');
       });
 
       // var slideCount = 0
