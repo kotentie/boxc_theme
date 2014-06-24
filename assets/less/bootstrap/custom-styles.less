@@ -18,7 +18,11 @@
   font-style: normal;
 }
 
+h1, h2, h3, h4, h5, h6, p, small {
 
+  text-rendering: optimizeLegibility;
+
+}
 
 //
 // Forms
@@ -283,7 +287,7 @@
 .footer-container {
 
   background-color: #bdbdbd;
-  margin-top: 20px;
+  margin-top: 0px;
 
   .footer-link-container {
     padding-top: 20px;
@@ -413,6 +417,12 @@
 
 .explainer-img-lft img{
   float: left;
+}
+
+.feature-row {
+
+  background-color: @brand-gray;
+
 }
 
 
@@ -557,6 +567,14 @@
     }
   }
 
+  .service_menu {
+
+    .table>tbody>tr>td {
+      vertical-align: inherit;
+    }
+
+  }
+
 
 
   #totals-table {
@@ -570,6 +588,7 @@
       padding: 10px 34px;
       border-top: 4px solid @brand-primary;
       border-bottom: 4px solid @brand-primary;
+      text-align: center;
   }
   }
   

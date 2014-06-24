@@ -1,5 +1,22 @@
+<?php if(is_page('Home')): ?>
+	<div class="row feature-row">
+		<div class="featured-in clearfix">
+				<img class="img-responsive feature" src="/wp-content/themes/boxc_theme/assets/img/front-techcrunch.png" alt="techcrunch"/>
+				<a href="http://technode.com/2013/06/26/china-based-companies-find-business-opportunities-in-international-shipping/">
+					<img class="img-responsive feature" src="/wp-content/themes/boxc_theme/assets/img/front-technode.png" alt="technode"/>
+				</a>
+				<a href="http://venturebeat.com/2013/07/24/the-six-most-memorable-startups-from-500-startups-sixth-class/">
+					<img class="img-responsive feature" src="/wp-content/themes/boxc_theme/assets/img/front-venturebeat.png" alt="venturebeat"/>
+				</a>
+				<a href="http://www.pingwest.com/demo/500-startups-boxc/">
+					<img class="img-responsive feature" src="/wp-content/themes/boxc_theme/assets/img/front-pingwest.png" alt="pingwest"/>
+				</a>
+		</div>
+	</div>
+<?php endif ?>
+
 <footer class="content-info" role="contentinfo">
-  <div class="container-fluid footer-container">
+  <div class="container-fluid footer-container clearfix">
     <?php dynamic_sidebar('sidebar-footer'); ?>
   	<div class="row">
   		<div class="footer-link-container">
