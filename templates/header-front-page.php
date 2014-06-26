@@ -24,17 +24,7 @@
         <span class="glyphicon glyphicon-chevron-right arrow-right" id="slide-forward"></span>
     </div>
       <div class="value-header">
-        <h2> 3-5 day fufillment from China <br> Starting at $2.99 per package</h2>
-      </div>
-      <div class="row testimonial-container">
-        <div class="testimonial" id="testimonial-1">
-            <h4>Fulfillment by Boxc helps us focus on innovation and providing a better customer experience"</h4>
-            <p>-Adam Schwartz, FresheTech.com</p>
-        </div>
-         <div class="testimonial" style="display:none" id="testimonial-2">
-            <h4>"By shipping directly with Boxc we have saved thousands of dollars and fulfilled orders faster than ever before"</h4>
-            <p>-Shaun Nath, THEUTLAB.com</p>
-        </div>
+        <h2> 3-5 day direct consumer shipping from China <br> Starting at $2.99 per package</h2>
       </div>
       <div class="row slide-button-container">
         <div class="slide-buttons">
@@ -62,6 +52,28 @@
         </div>
       <button type="submit" value="submit" class="btn btn-warning">Get Estimate</button>
     </form>
+    </div>
+    <div class="row testimonial-row">
+      <div class= "testimonial-container">
+        <div class="testimonial" id="testimonial-1">
+            <h4>"Fulfillment by Boxc helps us focus on innovation and providing a better customer experience"</h4>
+            <div class="testimonial-logo">
+              <img src="/wp-content/themes/boxc_theme/assets/img/front-freshetech-logo.png">
+            </div>
+        </div>
+         <div class="testimonial" id="testimonial-2">
+            <h4>"By shipping directly with Boxc we have saved thousands of dollars and fulfilled orders faster than ever before"</h4>
+            <div class="testimonial-logo">
+              <img src="/wp-content/themes/boxc_theme/assets/img/front-utlab-logo.png">
+            </div>
+        </div>
+        <div class="testimonial" id="testimonial-3">
+            <h4>"Boxc has helped us grow our business."</h4>
+            <div class="testimonial-logo">
+              <img src="/wp-content/themes/boxc_theme/assets/img/front-sodacase-logo.png">
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>

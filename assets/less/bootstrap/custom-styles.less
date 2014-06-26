@@ -250,32 +250,49 @@ h1, h2, h3, h4, h5, h6, p, small {
 
 }
 
+.testimonial-row {
+  background-color: @brand-gray;
+  padding-top: 40px;
+  padding-bottom: 40px; 
+}
+
 
 .testimonial-container{
-  padding-bottom: 10px;
-  top: 70%;
-  position: absolute;
-  width: 100%;
 
-  h4, p{
+  width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h4{
     margin-left: auto;
     margin-right: auto;
     width: 280px;
-  }
-
-  h4 {
     font-family: Georgia, serif;
     font-style: italic;
+  }
+
+  .testimonial-logo {
+    margin-top: 20px;
+    margin-left: 40px;
+  
   }
 }
 
 .testimonial{
   width: 300px;
-  float: right;
-  margin-right: 4.33%;
-  background-color: rgba(64,64,64, 0.6);
-  color: @navbar-front-page-link-color;
+  color: @gray-light;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 40px;
+
+  
+  + .testimonial {
+      padding-left: 40px;
+      margin-left: 0px;
+  }
+
 }
+
 
 
 //
@@ -426,13 +443,14 @@ h1, h2, h3, h4, h5, h6, p, small {
 .feature-row {
 
   background-color: @brand-gray;
+  margin-top: 80px;
 
 }
 
 
 .featured-in {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
