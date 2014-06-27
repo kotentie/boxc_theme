@@ -191,6 +191,10 @@ h1, h2, h3, h4, h5, h6, p, small {
 
 // Front Page Style
 
+.page-header {
+  border: 0px;
+}
+
 #front-page-header {
   background: url(@navbar-front-page-img) no-repeat center center; 
   -webkit-background-size: cover;
@@ -216,13 +220,24 @@ h1, h2, h3, h4, h5, h6, p, small {
 
 #front-page-header .value-header{
   color: @navbar-front-page-link-color;
-  margin-left: 8.33%;
-  top: 45%;
-  position: absolute;  
-  max-width: 450px;
-  padding-bottom: 60px;
+  padding-top: 130px;
+  max-width: 590px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1,h4 {
+    text-align: center;
+  }
+
+  .value-header-btn {
+    margin-top: 40px;
+    width: 254px;
+    margin-right: auto;
+    margin-left: auto;
+    }
 
 }
+
 
 .slide-buttons {
   width: 90px;

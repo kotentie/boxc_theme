@@ -23,8 +23,15 @@
         <span class="glyphicon glyphicon-chevron-left" id="slide-back"> </span>
         <span class="glyphicon glyphicon-chevron-right arrow-right" id="slide-forward"></span>
     </div>
-      <div class="value-header">
-        <h2> 3-5 day direct consumer shipping from China <br> Starting at $2.99 per package</h2>
+      <div class="value-header clearfix" id="value-header-1">
+        <h1> Ship direct from China to the US</h1> <h4>It's like domestic shipping: fast, cheap, and hassel free.</h4>
+        <div class="value-header-btn">
+        <button class="btn btn-primary">Ship your first package for free</button>
+        </div>
+      </div>
+      <div class="value-header clearfix" style="display: none" id="value-header-2">
+        <h1> Keep your inventory in China </h1> <h4>Let Boxc Pick, Pack and Ship Directly to your USA Customers.</h4>
+        <button class="btn btn-primary">Ship your first package for free</button>
       </div>
       <div class="row slide-button-container">
         <div class="slide-buttons">
