@@ -101,7 +101,18 @@ var Roots = {
              })();
 
              urlParams['callback'] = "callback";
-             urlParams['qty'] = "1";          
+
+             // Check if qty has been set (front page form assumes qty of one)
+             
+          if(typeof urlParams['qty'] === "undefined") {
+              urlParams['qty'] = "1";   
+            }
+
+            for (var key in urlParams) {
+              if (urlParams.hasOwnProperty(key)) {
+                $('.pkg-' + key + '').val(urlParams[key]);
+              }
+            }
           }
 
 
@@ -117,10 +128,13 @@ var Roots = {
                     data: urlParams,
                     success: function(apiResponce){
                       console.log(apiResponce);
-                      $('#PERITEM-temp').text('$' + apiResponce["SHIPPING PER ITEM"] + '');
-                      $('#MONTHLY-temp').text('$' + apiResponce["STORAGE PER MONTH"] + '');
+                      urlParams['PERITEM'] = apiResponce["SHIPPING PER ITEM"];
+                      urlParams['MONTHLY'] = apiResponce["STORAGE PER MONTH"];
+
+                      $('.PERITEM-temp').text('$' + apiResponce["SHIPPING PER ITEM"] + '');
+                      $('.MONTHLY-temp').text('$' + apiResponce["STORAGE PER MONTH"] + '');
                         },
-                     error: function() {alert('Something went wrong. Please double check the numbers and submit again.'); }
+                     error: function() {alert('Something went wrong. Please double check the numbers and submit the form again.'); }
               });
             
           }
@@ -171,9 +185,7 @@ var Roots = {
 
           }
 
-          function addSimpleHtml(){
 
-          }
 
 
           function addHtml(){
@@ -211,7 +223,6 @@ var Roots = {
 
           addUserVarsHtml();
           callBoxcApi();
-          addSimpleHtml();
           // addHtml();
           // fillCycleArr();
           // sumCycleSumObj();
@@ -220,6 +231,26 @@ var Roots = {
               sumCycleSumObj();
               
           });
+
+         $('#link-fbb').click(function(){
+              for (var key in urlParams) {
+                if (urlParams.hasOwnProperty(key)) {
+                  $('.pkg-' + key + '').val(urlParams[key]);
+                }
+              }
+            $('.PERITEM-temp').text('$' + urlParams['PERITEM'] + '');
+            $('.MONTHLY-temp').text('$' + urlParams['MONTHLY'] + '');
+
+                });
+
+          $('#link-fbs').click(function(){
+              for (var key in urlParams) {
+                if (urlParams.hasOwnProperty(key)) {
+                  $('.pkg-' + key + '').val(urlParams[key]);
+                }
+              }
+            $('.PERITEM-temp').text('$' + urlParams['PERITEM'] + '');
+            });
 
           $('#sign-up-btn').click(function(){
             serviceCodeArray = [];
