@@ -26,13 +26,13 @@
       <div class="value-header clearfix" id="value-header-1">
         <h1> Ship direct from China to the US</h1> <h4>It's like domestic shipping: fast, cheap, and hassel free.</h4>
         <div class="value-header-btn">
-          <button class="btn btn-primary">Ship your first package for free</button>
+            <a href="https://ship.boxc.com/account/register" class="btn btn-success">Ship your first package for free</a>
         </div>
       </div>
       <div class="value-header clearfix" style="display: none" id="value-header-2">
         <h1> Keep your inventory in China </h1> <h4>Let Boxc Pick, Pack and Ship Directly to your USA Customers.</h4>
           <div class="value-header-btn">
-            <button class="btn btn-primary">Ship your first package for free</button>
+            <a href="https://ship.boxc.com/account/register" class="btn btn-success">Ship your first package for free</a>
           </div>
       </div>
       <div class="row slide-button-container">
