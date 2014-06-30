@@ -74,7 +74,20 @@ var Roots = {
 
           estimatePrice();
           
-          function addUserVarsHtml(){
+        
+
+
+
+      function estimatePrice(){
+          
+          var boxcApiUrl = "http://boxc-preview.appspot.com/pricing/fbb?"
+          // var boxcApi = {"C000":{"Service_Code":"C000","Service_Type":"PACK","Service":"PICK & PACK","Rate":"0.42 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C001":{"Service_Code":"C001","Service_Type":"PACK","Service":"BOXC PACKAGING","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no","options":[{"option":"C001-P01","name":"BOXC PACKAGING","rate":"0.00"},{"option":"C001-P02","name":"YOUR PACKAGING","rate":"0.02"},{"option":"C001-P03","name":"SUPER DUPER PACKAGING","rate":"0.10"}]},"C002":{"Service_Code":"C002","Service_Type":"SHIP","Service":"IMPORT","Rate":"1.99","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C003":{"Service_Code":"C003","Service_Type":"SHIP","Service":"US DELIVERY","Rate":"2.99 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C004":{"Service_Code":"C004","Service_Type":"SHIP","Service":"INSURANCE","Rate":"0.00","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"yes"},"C005":{"Service_Code":"C005","Service_Type":"WAREHOUSE","Service":"STORAGE","Rate":"0.13","Unit":"PER SKU","Cycle":"MONTHLY","Optional":"no"},"C006":{"Service_Code":"C006","Service_Type":"WAREHOUSE","Service":"PRODUCT PHOTOS","Rate":"5.00","Unit":"PER SKU","Cycle":"ONCE","Optional":"yes"}};
+          var boxcApi;
+          var urlParams;
+          var cycleSumObj = {};
+          var cycleArr = [];
+
+            function addUserVarsHtml(){
               (window.onpopstate = function () {
                 var match,
                 pl     = /\+/g,  // Regex for replacing addition symbol with a space
@@ -87,18 +100,30 @@ var Roots = {
                  urlParams[decode(match[1])] = decode(match[2]);
              })();
 
-            displayWeight = "Weight:" + urlParams["weight"].match(/\d+$/)[0] + " lbs" ;
-            displaySize = "Size:" + urlParams["d0"].match(/\d+$/)[0] + " in " + urlParams["d1"].match(/\d+$/)[0] + " in " + urlParams["d2"].match(/\d+$/)[0] + " in ";            
-            alert(displaySize);
+             urlParams['callback'] = "callback";
+             urlParams['qty'] = "1";          
           }
 
-          function estimatePrice(){
-          var boxcApiUrl = "http://boxc-preview.appspot.com/pricing/fbb?"
-          var boxcApi = {"C000":{"Service_Code":"C000","Service_Type":"PACK","Service":"PICK & PACK","Rate":"0.42 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C001":{"Service_Code":"C001","Service_Type":"PACK","Service":"BOXC PACKAGING","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no","options":[{"option":"C001-P01","name":"BOXC PACKAGING","rate":"0.00"},{"option":"C001-P02","name":"YOUR PACKAGING","rate":"0.02"},{"option":"C001-P03","name":"SUPER DUPER PACKAGING","rate":"0.10"}]},"C002":{"Service_Code":"C002","Service_Type":"SHIP","Service":"IMPORT","Rate":"1.99","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C003":{"Service_Code":"C003","Service_Type":"SHIP","Service":"US DELIVERY","Rate":"2.99 ","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"no"},"C004":{"Service_Code":"C004","Service_Type":"SHIP","Service":"INSURANCE","Rate":"0.00","Unit":"PER ITEM","Cycle":"PER ITEM","Optional":"yes"},"C005":{"Service_Code":"C005","Service_Type":"WAREHOUSE","Service":"STORAGE","Rate":"0.13","Unit":"PER SKU","Cycle":"MONTHLY","Optional":"no"},"C006":{"Service_Code":"C006","Service_Type":"WAREHOUSE","Service":"PRODUCT PHOTOS","Rate":"5.00","Unit":"PER SKU","Cycle":"ONCE","Optional":"yes"}};
-          var urlParams;
-          var cycleSumObj = {};
-          var cycleArr = [];
 
+          function callBoxcApi(){
+
+
+            $.ajax({
+                    type: 'GET',                                                                                                                                                                                                 
+                    url: 'http://boxc-preview.appspot.com/pricing/fbb_cors',
+                    dataType: 'jsonp',
+                    jsonp: 'JSONP',
+                    jsonpCallback: 'callback',
+                    data: urlParams,
+                    success: function(apiResponce){
+                      console.log(apiResponce);
+                      $('#PERITEM-temp').text('$' + apiResponce["SHIPPING PER ITEM"] + '');
+                      $('#MONTHLY-temp').text('$' + apiResponce["STORAGE PER MONTH"] + '');
+                        },
+                     error: function() {alert('Something went wrong. Please double check the numbers and submit again.'); }
+              });
+            
+          }
 
 
           Number.prototype.formatMoney = function(c, d, t){
@@ -146,6 +171,11 @@ var Roots = {
 
           }
 
+          function addSimpleHtml(){
+
+          }
+
+
           function addHtml(){
 
           $.each(boxcApi, function(i, item){
@@ -180,10 +210,11 @@ var Roots = {
           }
 
           addUserVarsHtml();
-
-          addHtml();
-          fillCycleArr();
-          sumCycleSumObj();
+          callBoxcApi();
+          addSimpleHtml();
+          // addHtml();
+          // fillCycleArr();
+          // sumCycleSumObj();
 
           $('input[type=radio]').change(function() {
               sumCycleSumObj();

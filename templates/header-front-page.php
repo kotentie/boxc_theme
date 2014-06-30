@@ -26,12 +26,14 @@
       <div class="value-header clearfix" id="value-header-1">
         <h1> Ship direct from China to the US</h1> <h4>It's like domestic shipping: fast, cheap, and hassel free.</h4>
         <div class="value-header-btn">
-        <button class="btn btn-primary">Ship your first package for free</button>
+          <button class="btn btn-primary">Ship your first package for free</button>
         </div>
       </div>
       <div class="value-header clearfix" style="display: none" id="value-header-2">
         <h1> Keep your inventory in China </h1> <h4>Let Boxc Pick, Pack and Ship Directly to your USA Customers.</h4>
-        <button class="btn btn-primary">Ship your first package for free</button>
+          <div class="value-header-btn">
+            <button class="btn btn-primary">Ship your first package for free</button>
+          </div>
       </div>
       <div class="row slide-button-container">
         <div class="slide-buttons">
@@ -47,15 +49,15 @@
     <form class="form-inline" role="form" action="/estimate" method="get">
       <div class="form-group form-weight">
         <label class="form-label" for="package-weight">Weight</label>
-        <input type="text" class="form-control" id="package-weight" name="weight" placeholder="2.5 lbs">
+        <input type="text" class="form-control" id="package-weight" name="weight" placeholder="2.5 lbs" required pattern="\d.{0,4}" title="example: 1.2 lbs">
       </div>
         <div class="form-group form-size">
           <label class="form-label" for="package-d0">Package Size</label>
-          <input type="text" class="form-control" id="package-d0" name="d0" placeholder="2in">
+          <input type="text" class="form-control" id="package-d0" name="depth" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
           <label class="form-label" for="package-d1"> X </label>
-          <input type="text" class="form-control" id="packages-d1" name="d1" placeholder="2in">
+          <input type="text" class="form-control" id="packages-d1" name="height" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
            <label class="form-label" for="package-d2"> X </label>
-          <input type="text" class="form-control" id="package-d2" name="d2" placeholder="2in">
+          <input type="text" class="form-control" id="package-d2" name="width" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
         </div>
       <button type="submit" value="submit" class="btn btn-warning">Get Estimate</button>
     </form>
