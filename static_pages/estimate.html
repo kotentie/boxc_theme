@@ -5,10 +5,10 @@
         </div>
             <ul class="nav nav-tabs">
 
-              <li class="active"><a id="link-fbb" href="" data-toggle="tab">Fulfillment by Boxc</a></li>
+              <li class="active"><a id="link-fbb" href="#fbb" data-toggle="tab">Fulfillment by Boxc</a></li>
               <li><a href="#fbs" id="link-fbs" data-toggle="tab">Fulfillment by Suppilier</a></li>
-<!--               <li><a href="#bulk" id="link-bulk" data-toggle="tab">Bulk Ship</a></li>
-              <li><a href="#ustochina" id="link-utc" data-toggle="tab">US to China</a></li> -->
+              <li><a href="#bulk" id="link-bulk" style="display:none" data-toggle="tab">Bulk Ship</a></li>
+              <li><a href="#ustochina" id="link-utc" style="display:none" data-toggle="tab">US to China</a></li>
           </ul>
           <div class="tab-content container">
               <div class="tab-pane active" id="fbb">
@@ -29,21 +29,21 @@
                                 <form role="form" action="/estimate" method="get">
                                     <div class="form-group form-count clearfix">
                                     <label for="pkg-qty">Package Count</label>
-                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
-                                    <div class="input-container">
+                                    <p> The total number of packages shipped and or stored with boxc.</p>
+                                      <div class="input-container">
                                         <input type="text" class="form-control pkg-qty" id="pkg-qty" data-total="1" name="qty">
                                     </div>
                                   </div>
                                   <div class="form-group form-weight clearfix">
                                     <label for="pkg-weight">Package Weight</label>
-                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <p> Wieght of package in lbs</p>
                                     <div class="input-container">
                                         <input type="text" class="form-control pkg-weight" id="pkg-weight" name="weight">
                                     </div>
                                   </div>
                                   <div class="form-group form-size clearfix">
                                       <label class="form-label" for="pkg-depth">Package Size</label>
-                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <p> Demensions of package in inches</p>
                                         <div class="input-container">  
                                           <input type="text" class="form-control pkg-depth" id="pkg-depth" name="depth" >
                                           <label class="form-label" for="pkg-height"> X </label>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="form-group form-email">
                                         <label for="email">Email (optional) </label>
-                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <p>If you would like us to contact you a discount.</p>
                                         <div class="input-container">
                                             <input type="text" class="form-control" id="email" placeholer="support@boxc.com">
                                         </div>
@@ -91,21 +91,21 @@
                                 <form role="form" action="/estimate" method="get">
                                     <div class="form-group form-count clearfix">
                                     <label for="pkg-qty">Package Count</label>
-                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <p> The total number of packages shipped and or stored with boxc.</p>
                                     <div class="input-container">
                                         <input type="text" class="form-control pkg-qty" id="pkg-qty" data-total="1" name="qty">
                                     </div>
                                   </div>
                                   <div class="form-group form-weight clearfix">
                                     <label for="pkg-weight">Package Weight</label>
-                                    <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                    <p> Wieght of package in lbs</p>
                                     <div class="input-container">
                                         <input type="text" class="form-control pkg-weight" id="pkg-weight" name="weight">
                                     </div>
                                   </div>
                                   <div class="form-group form-size clearfix">
                                       <label class="form-label" for="pkg-depth">Package Size</label>
-                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <p> Demensions of package in inches</p>
                                         <div class="input-container">  
                                           <input type="text" class="form-control pkg-depth" id="pkg-depth" name="depth" >
                                           <label class="form-label" for="pkg-height"> X </label>
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="form-group form-email">
                                         <label for="email">Email (optional) </label>
-                                        <p> Sed gravida nibh ut mi venenatis vulputate. Praesent ultrices, libero vitae lobortis consectetur, mauris ante tristique magna.</p>
+                                        <p>If you would like us to contact you a discount.</p>
                                         <div class="input-container">
                                             <input type="text" class="form-control" id="email" placeholer="support@boxc.com">
                                         </div>
