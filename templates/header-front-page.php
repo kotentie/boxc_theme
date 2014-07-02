@@ -39,8 +39,6 @@
         <div class="slide-buttons">
           <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-1"></a>
           <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-2"></a>
-          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-3"></a>
-          <a class="front-page-slide glyphicon glyphicon-unchecked" id="slide-img-4"></a>
         </div>
     </div>
   </div>
