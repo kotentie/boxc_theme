@@ -14,7 +14,8 @@
               <div class="tab-pane active" id="fbb">
                     <div class="row">
                         <div class="services-explainer col-xs-8">
-                            <h5>Boxc handles everything. You send your products to our warehouse in China. We store, pick, pack, and ship.  </h5>
+                            <h5>Boxc handles everything. You send your products to our warehouse in China.</h5>
+                            <h5>We store, pick, pack, and ship.</h5>
                         </div>
                         <div class="col-xs-4 sign-up">
                             <a href="http://ship.boxc.com/account/register" class="btn btn-success">Sign Up</a>
@@ -29,34 +30,34 @@
                                 <form role="form" action="/estimate" method="get">
                                     <div class="form-group form-count clearfix">
                                     <label for="pkg-qty">Package Count</label>
-                                    <p> The total number of packages shipped and or stored with boxc.</p>
+                                    <p> The total number of products shipped and stored with boxc.</p>
                                       <div class="input-container">
-                                        <input type="text" class="form-control pkg-qty" id="pkg-qty" data-total="1" name="qty">
+                                        <input type="text" class="form-control pkg-qty" id="pkg-qty" data-total="1" name="qty" required pattern="\d.{0,4}" title="example: 20">
                                     </div>
                                   </div>
                                   <div class="form-group form-weight clearfix">
                                     <label for="pkg-weight">Package Weight</label>
                                     <p> Wieght of package in lbs</p>
                                     <div class="input-container">
-                                        <input type="text" class="form-control pkg-weight" id="pkg-weight" name="weight">
+                                        <input type="text" class="form-control pkg-weight" id="pkg-weight" name="weight" required pattern="\d.{0,4}" title="example: 1.2 lbs">
                                     </div>
                                   </div>
                                   <div class="form-group form-size clearfix">
                                       <label class="form-label" for="pkg-depth">Package Size</label>
                                         <p> Demensions of package in inches</p>
                                         <div class="input-container">  
-                                          <input type="text" class="form-control pkg-depth" id="pkg-depth" name="depth" >
+                                          <input type="text" class="form-control pkg-depth" id="pkg-depth" name="depth" required pattern="\d.{0,4}" title="example: 2in">
                                           <label class="form-label" for="pkg-height"> X </label>
-                                          <input type="text" class="form-control pkg-height" id="pkg-height" name="height" >
+                                          <input type="text" class="form-control pkg-height" id="pkg-height" name="height" required pattern="\d.{0,4}" title="example: 2in">
                                            <label class="form-label " for="pkg-width"> X </label>
-                                          <input type="text" class="form-control pkg-width" id="pkg-width" name="width" >
+                                          <input type="text" class="form-control pkg-width" id="pkg-width" name="width" required pattern="\d.{0,4}" title="example: 2in">
                                         </div>
                                     </div>
                                     <div class="form-group form-email">
                                         <label for="email">Email (optional) </label>
                                         <p>If you would like us to contact you with a discount.</p>
                                         <div class="input-container">
-                                            <input type="text" class="form-control" id="email" placeholer="support@boxc.com">
+                                            <input type="email" class="form-control" id="email" placeholer="support@boxc.com">
                                         </div>
                                     </div>
                                   <button type="submit" value="submit" class="btn btn-primary">ReCalculate</button>

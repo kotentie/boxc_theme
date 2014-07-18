@@ -69,7 +69,7 @@
             </div>
         </div>
          <div class="testimonial" id="testimonial-2">
-            <h4>"By shipping directly with Boxc we have saved thousands of dollars and fulfilled orders faster than ever before"</h4>
+            <h4>"We can clearly see a service advantage with BoxC in addition to the cost savings."</h4>
             <div class="testimonial-logo">
               <img src="/wp-content/themes/boxc_theme/assets/img/front-utlab-logo.png">
             </div>
