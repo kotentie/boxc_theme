@@ -87,6 +87,7 @@ var Roots = {
           var cycleSumObj = {};
           var cycleArr = [];
 
+
             function addUserVarsHtml(){
               (window.onpopstate = function () {
                 var match,
@@ -111,7 +112,7 @@ var Roots = {
             for (var key in urlParams) {
               if (urlParams.hasOwnProperty(key)) {
                 $('.pkg-' + key + '').val(urlParams[key]);
-              }
+                              }
             }
           }
 
@@ -127,12 +128,10 @@ var Roots = {
                     jsonpCallback: 'callback',
                     data: urlParams,
                     success: function(apiResponce){
-                      console.log(apiResponce);
                       urlParams['PERITEM'] = apiResponce["SHIPPING PER ITEM"];
                       urlParams['MONTHLY'] = apiResponce["STORAGE PER MONTH"];
-
-                      $('.PERITEM-temp').text('$' + apiResponce["SHIPPING PER ITEM"] + '');
-                      $('.MONTHLY-temp').text('$' + apiResponce["STORAGE PER MONTH"] + '');
+                      $('.PERITEM-temp').text('$' + apiResponce["SHIPPING PER ITEM"].formatMoney(2) + '');
+                      $('.MONTHLY-temp').text('$' + apiResponce["STORAGE PER MONTH"].formatMoney(2) + '');
                         },
                      error: function() {alert('Something went wrong. Please double check the numbers and submit the form again.'); }
               });
@@ -268,23 +267,19 @@ var Roots = {
               sumCycleSumObj();
           });
 
-          $('#fbb a').click(function (e) {
-              e.preventDefault();
+          $('#fbb').click(function (e) {
               $(this).tab('show');
             });
 
-          $('#fbs a').click(function (e) {
-              e.preventDefault();
+          $('#fbs').click(function (e) {
               $(this).tab('show');
             });
 
-          $('#bulk a').click(function (e) {
-              e.preventDefault();
+          $('#bulk').click(function (e) {
               $(this).tab('show');
             });
 
-           $('#ustochina a').click(function (e) {
-              e.preventDefault();
+           $('#ustochina').click(function (e) {
               $(this).tab('show');
             });
       }

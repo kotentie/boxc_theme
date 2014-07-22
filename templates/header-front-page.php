@@ -46,17 +46,31 @@
     <div class="row form-container">
     <form class="form-inline" role="form" action="/estimate" method="get">
       <div class="form-group form-weight">
-        <label class="form-label" for="package-weight">Weight</label>
-        <input type="text" class="form-control" id="package-weight" name="weight" placeholder="2.5 lbs" required pattern="\d.{0,4}" title="example: 1.2 lbs">
+        <label class="form-label" for="package-weight">Package Weight</label>
+        <input type="text" class="form-control" id="package-weight" name="weight" required pattern="\d.{0,8}" title="example: 1.2">
+      </div>
+      <div class="form-weight-unit form-group">
+        <select class="form-control" name="wunit">
+        <option value="lbs">lbs</option>
+        <option value="oz">oz</option>
+        <option value="grams">grams</option>
+        <option value="kg">kg</option>
+        </select>
       </div>
         <div class="form-group form-size">
-          <label class="form-label" for="package-d0">Package Size</label>
-          <input type="text" class="form-control" id="package-d0" name="depth" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
+          <label class="form-label" for="package-d0">Size</label>
+          <input type="text" class="form-control" id="package-d0" name="depth" required pattern="\d.{0,8}" title="example: 3">
           <label class="form-label" for="package-d1"> X </label>
-          <input type="text" class="form-control" id="packages-d1" name="height" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
+          <input type="text" class="form-control" id="packages-d1" name="height" required pattern="\d.{0,8}" title="example: 3">
            <label class="form-label" for="package-d2"> X </label>
-          <input type="text" class="form-control" id="package-d2" name="width" placeholder="2in" required pattern="\d.{0,4}" title="example: 3in">
+          <input type="text" class="form-control" id="package-d2" name="width" required pattern="\d.{0,8}" title="example: 3">
         </div>
+        <div class="form-length-unit form-group">
+          <select class="form-control" name="lunit">
+            <option value="in">in</option>
+            <option value="cm">cm</option>
+          </select>
+      </div>
       <button type="submit" value="submit" class="btn btn-warning">Get Estimate</button>
     </form>
     </div>

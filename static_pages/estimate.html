@@ -6,7 +6,7 @@
             <ul class="nav nav-tabs">
 
               <li class="active"><a id="link-fbb" href="#fbb" data-toggle="tab">Fulfillment by Boxc</a></li>
-              <li><a href="#fbs" id="link-fbs" data-toggle="tab">Fulfillment by Suppilier</a></li>
+              <li><a href="#fbs" id="link-fbs" data-toggle="tab">Fulfillment by Supplier</a></li>
               <li><a href="#bulk" id="link-bulk" style="display:none" data-toggle="tab">Bulk Ship</a></li>
               <li><a href="#ustochina" id="link-utc" style="display:none" data-toggle="tab">US to China</a></li>
           </ul>
@@ -18,7 +18,7 @@
                             <h5>We store, pick, pack, and ship.</h5>
                         </div>
                         <div class="col-xs-4 sign-up">
-                            <a href="http://ship.boxc.com/account/register" class="btn btn-success">Sign Up</a>
+                          <a href="http://boxc-fbb.appspot.com/" class="btn btn-success">Sign Up</a>
                         </div>
                     </div>
                     <div class="row">
@@ -30,21 +30,27 @@
                                 <form role="form" action="/estimate" method="get">
                                     <div class="form-group form-count clearfix">
                                     <label for="pkg-qty">Package Count</label>
-                                    <p> The total number of products shipped and stored with boxc.</p>
+                                    <p> Total number of products shipped and stored</p>
                                       <div class="input-container">
                                         <input type="text" class="form-control pkg-qty" id="pkg-qty" data-total="1" name="qty" required pattern="\d.{0,4}" title="example: 20">
                                     </div>
                                   </div>
                                   <div class="form-group form-weight clearfix">
                                     <label for="pkg-weight">Package Weight</label>
-                                    <p> Wieght of package in lbs</p>
+                                    <p> Weight of package</p>
                                     <div class="input-container">
                                         <input type="text" class="form-control pkg-weight" id="pkg-weight" name="weight" required pattern="\d.{0,4}" title="example: 1.2 lbs">
+                                        <select class="form-control pkg-wunit" name="wunit">
+                                          <option value="lbs">lbs</option>
+                                          <option value="oz">oz</option>
+                                          <option value="grams">grams</option>
+                                          <option value="kg">kg</option>
+                                        </select>
                                     </div>
                                   </div>
                                   <div class="form-group form-size clearfix">
                                       <label class="form-label" for="pkg-depth">Package Size</label>
-                                        <p> Demensions of package in inches</p>
+                                        <p> Dimensions of package</p>
                                         <div class="input-container">  
                                           <input type="text" class="form-control pkg-depth" id="pkg-depth" name="depth" required pattern="\d.{0,4}" title="example: 2in">
                                           <label class="form-label" for="pkg-height"> X </label>
@@ -52,6 +58,10 @@
                                            <label class="form-label " for="pkg-width"> X </label>
                                           <input type="text" class="form-control pkg-width" id="pkg-width" name="width" required pattern="\d.{0,4}" title="example: 2in">
                                         </div>
+                                        <select class="form-control pkg-lunit" name="lunit">
+                                            <option value="in">in</option>
+                                            <option value="cm">cm</option>
+                                       </select>
                                     </div>
                                     <div class="form-group form-email">
                                         <label for="email">Email (optional) </label>
@@ -60,7 +70,7 @@
                                             <input type="email" class="form-control" id="email" placeholer="support@boxc.com">
                                         </div>
                                     </div>
-                                  <button type="submit" value="submit" class="btn btn-primary">ReCalculate</button>
+                                  <button type="submit" value="submit" class="btn btn-primary">Recalculate</button>
                                 </form>
                             </div>
                         </div>

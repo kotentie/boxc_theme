@@ -100,22 +100,29 @@ h1, h2, h3, h4, h5, h6, p, small {
   padding: 20px 0px;
 
   .form-inline {
-    width: 700px;
+    width: 820px;
+  }
+
+  .btn {
+    margin-left: 10px;
   }
 
   .form-group {
     margin-right: 10px;
     display: inline-block;
   }
-
+  
+  .form-control {
+    width: 80px;
+  }
 
   .form-weight input{
-    width: 150px;
+    width: 60px;
 
   }
 
   .form-size input{
-    width:50px;
+    width: 60px;
 
   }
 
@@ -686,8 +693,34 @@ h1, h2, h3, h4, h5, h6, p, small {
     }
   }
 
+  .panel-body {
+    padding: 30px;
+  }
+
   .panel {  
     padding: 0px;
+
+    
+    .input-container{
+      float: left;
+    }
+
+    .pkg-weight{
+      float: left;
+      width: 80px;
+      margin-right: 15px;
+    }
+
+    .pkg-lunit { 
+      float: left;
+      width: 65px;
+    }
+
+    .pkg-wunit{
+      width: 90px;
+      float: left;
+
+    }
 
     .btn {
       float: right;
@@ -695,7 +728,7 @@ h1, h2, h3, h4, h5, h6, p, small {
     }
 
     .form-count input{
-      width: 40px;
+      width: 80px;
     }
 
     .form-size input{
@@ -726,7 +759,10 @@ h1, h2, h3, h4, h5, h6, p, small {
   #totals-table-temp {
     color: @brand-primary;
     text-align: center;
-    border: 4px solid @brand-primary;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #ddd;
     padding: 40px;
 
      :nth-child(3) {
@@ -833,4 +869,96 @@ h1, h2, h3, h4, h5, h6, p, small {
     img {
           float: right;
     }
+}
+
+
+// Shopify
+
+
+.shopify {
+   background: url("../img/shopify-smile-woman.jpg") no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  .navbar-fixed-top {
+    display: none;
+  }
+
+  .wrap{
+    padding: 0px;
+  }
+  
+  .container-fluid {
+    padding: 0px;  
+  }
+
+  .shopify-container {
+
+    width: 600px;
+    margin-left: 320px;
+  
+    .container{
+      margin-right: 0px;
+      margin-left: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    
+    }
+
+    .logo{
+      margin-left: 100px;
+      margin-bottom: 20px;
+    }
+
+    span{
+        color: @brand-primary;
+    }
+    
+    .value-prop{
+      margin-left: 100px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 620px;
+      display: block;
+      
+      h3{
+        line-height: 150%;
+      }
+    }
+
+    .features{
+     margin-left: 130px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 560px; 
+      
+      .feature{
+        width: 560px;
+        font-family: Verdana, Geneva, sans-serif;
+      }
+
+      h6{
+        font-size: 16px;
+      }
+
+    }
+
+    .signup-btn{
+
+      margin-left: 100px;
+      margin-top: 30px;
+      margin-bottom: 80px;
+      width: 450px;
+
+      .btn{
+        width: 450px;
+        display: block;
+        font-size: 24px;
+ 
+      }
+    }
+  }
+
 }
