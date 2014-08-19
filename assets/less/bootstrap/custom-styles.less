@@ -9,20 +9,28 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: ~"url('@{mon-font-path}@{mon-font-name}.eot')";
-  src: ~"url('@{mon-font-path}@{mon-font-name}.eot?#iefix') format('embedded-opentype')",
-  ~"url('@{mon-font-path}@{mon-font-name}.woff') format('woff')",
-  ~"url('@{mon-font-path}@{mon-font-name}.ttf') format('truetype')",
-  ~"url('@{mon-font-path}@{mon-font-name}.svg#@{mon-font-svg-id}') format('svg')";
+  src: "url('../fonts/montserrat-regular.eot')";
+  src: "url('../fonts/montserrat-regular.eot?#iefix') format('embedded-opentype')",
+  "url('@{../fonts/montserrat-regular.ttf') format('truetype')";
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: "url('../fonts/glyphicons-halflings-regular.eot')";
+  src: "url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype')",
+       "url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')";
+}
+
 
 h1, h2, h3, h4, h5, h6, p, small {
 
   text-rendering: optimizeLegibility;
 
 }
+
+
 
 //
 // Forms
@@ -52,6 +60,7 @@ h1, h2, h3, h4, h5, h6, p, small {
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
+      -webkit-text-stroke: 0.2px; 
       // width: auto;  Prevent labels from stacking above inputs in `.form-group`
       vertical-align: middle;
     }
@@ -100,7 +109,7 @@ h1, h2, h3, h4, h5, h6, p, small {
   padding: 20px 0px;
 
   .form-inline {
-    width: 820px;
+    width: 860px;
   }
 
   .btn {
@@ -113,7 +122,7 @@ h1, h2, h3, h4, h5, h6, p, small {
   }
   
   .form-control {
-    width: 80px;
+    width: 100px;
   }
 
   .form-weight input{
@@ -543,7 +552,10 @@ h1, h2, h3, h4, h5, h6, p, small {
   margin-left: auto;
   float: none;
   padding-bottom: 20px;
-  padding-top: 20px; 
+  padding-top: 20px;
+  -webkit-text-stroke: 0.2px; 
+
+
 
   a {
     color: inherit;
@@ -922,9 +934,12 @@ h1, h2, h3, h4, h5, h6, p, small {
       margin-bottom: 20px;
       width: 620px;
       display: block;
+      font-family: Ubuntu, sans-serif;
+
       
       h3{
-        line-height: 150%;
+        line-height: 180%;
+        font-size: 28px;
       }
     }
 
@@ -933,14 +948,19 @@ h1, h2, h3, h4, h5, h6, p, small {
       margin-top: 30px;
       margin-bottom: 30px;
       width: 560px; 
+      font-family: Lora, Arial;
+
+      h3 {
+        font-size: 26px;
+      }
       
       .feature{
         width: 560px;
-        font-family: Verdana, Geneva, sans-serif;
+        margin-bottom: 30px;
       }
 
       h6{
-        font-size: 16px;
+        font-size: 18px;
       }
 
     }
@@ -960,5 +980,33 @@ h1, h2, h3, h4, h5, h6, p, small {
       }
     }
   }
+}
+
+// Shopify-signup
+
+.shopify-signup-contianer{
+
+  h1{
+    margin-bottom: 40px;
+  }
+
+  .image-free-pkg{
+    float: right;
+  }
+
+  .crm-form-container {
+    margin-bottom: 60px;
+
+    .btn {
+      margin-top: 20px;
+
+    }
+  }
 
 }
+
+
+
+
+
+

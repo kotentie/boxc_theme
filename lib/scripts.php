@@ -11,7 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '51b9a6bf43d917b80abd66a829aa0f4b');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '993410e2f6f65997d01dff97e2d3c8c5');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -28,7 +28,17 @@ function roots_scripts() {
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '265744d38d05de3511350e323c2b97de', true);
-  
+  wp_register_style('google_fonts', 'http://fonts.googleapis.com/css?family=Lora|Ubuntu');
+  wp_register_script('sugar_crm', 'http://fgbnad4158.trial.sugarcrm.com//cache/include/javascript/sugar_grp1.js?v=vq6ix-fMi5xXFj2XbNthJA');
+
+
+
+  if(is_page('signup-shopify')){
+  }
+
+  if(is_page('shopify')){
+    wp_enqueue_style('google_fonts');
+  }
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_scripts');

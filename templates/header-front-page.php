@@ -20,8 +20,8 @@
       </nav>
     </div>
     <div class="row arrow-nav">
-        <span class="glyphicon glyphicon-chevron-left" id="slide-back"> </span>
-        <span class="glyphicon glyphicon-chevron-right arrow-right" id="slide-forward"></span>
+        <span class="glyphicon glyphicon-chevron-left" id="slide-back" style="display:none"> </span>
+        <span class="glyphicon glyphicon-chevron-right arrow-right" id="slide-forward" style="display:none"></span>
     </div>
       <div class="value-header clearfix" id="value-header-1">
         <h1> Ship direct from China to the US</h1> <h4>It's like domestic shipping: fast, cheap, and hassel free.</h4>
