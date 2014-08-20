@@ -47,7 +47,10 @@
         </div>
          <div class="form-group">
           <label for="do_not_call">Do you already buy direct from china?</label>
-          <input type="checkbox" class="form-control" id="do_not_call" name="do_not_call">
+          <select type="checkbox" class="form-control" id="do_not_call" name="do_not_call">
+            <option value="1">yes</option>
+            <option value="0">no</option>
+          </select>
         </div>
         <div class="hidden-form">
           <tr>
@@ -57,7 +60,7 @@
             </tr>
             <tr>
                 <td style='display: none'><input id='redirect_url' name=
-                'redirect_url' type='hidden' value='http://boxc.com'></td>
+                'redirect_url' type='hidden' value='http://boxc.com/signup-success/'></td>
             </tr>
 
             <tr>
@@ -72,15 +75,15 @@
 
             <tr>
                 <td style='display: none'><input id='bool_id' name='bool_id'
-                type='hidden' value='do_not_call;'></td>
+                type='hidden' value=''></td>
             </tr>
         </div>
         <button type="submit" class="btn btn-warning">Submit</button>
       </form>
     </div>
      <div class="col-xs-7">
-      <div class="image-free-pkg">
-        <img src="/wp-content/themes/boxc_theme/assets/img/shopifyformart.png">
+      <div class="form-img-side">
+        <img src="/wp-content/themes/boxc_theme/assets/img/form-smile-woman.jpg">
       </div>
     </div>
   </div>
