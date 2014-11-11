@@ -210,6 +210,13 @@ h1, h2, h3, h4, h5, h6, p, small {
 
 .navbar-nav {
 
+  li{
+    &:hover,
+    &:focus {
+    border-bottom: 2px;
+  }
+  }
+
  @media (min-width: @grid-float-breakpoint) {
    float: right;
  }

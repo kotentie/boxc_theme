@@ -27,7 +27,7 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '265744d38d05de3511350e323c2b97de', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'efa49a85fca408e457b1eaeb529fc10f', true);
   wp_register_style('google_fonts', 'http://fonts.googleapis.com/css?family=Lora|Ubuntu');
   wp_register_script('sugar_crm', 'http://fgbnad4158.trial.sugarcrm.com//cache/include/javascript/sugar_grp1.js?v=vq6ix-fMi5xXFj2XbNthJA');
 

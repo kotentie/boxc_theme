@@ -237,8 +237,8 @@ var Roots = {
                   $('.pkg-' + key + '').val(urlParams[key]);
                 }
               }
-            $('.PERITEM-temp').text('$' + urlParams['PERITEM'] + '');
-            $('.MONTHLY-temp').text('$' + urlParams['MONTHLY'] + '');
+            $('.PERITEM-temp').text('$' + urlParams['PERITEM'].formatMoney(2) + '');
+            $('.MONTHLY-temp').text('$' + urlParams['MONTHLY'].formatMoney(2) + '');
 
                 });
 
@@ -248,7 +248,7 @@ var Roots = {
                   $('.pkg-' + key + '').val(urlParams[key]);
                 }
               }
-            $('.PERITEM-temp').text('$' + urlParams['PERITEM'] + '');
+            $('.PERITEM-temp').text('$' + urlParams['PERITEM'].formatMoney(2) + '');
             });
 
           $('#sign-up-btn').click(function(){
