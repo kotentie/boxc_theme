@@ -3,6 +3,45 @@
   <h3>Our sourcing staff will reach out to you in the next 24 hours</h3>
 </div>
 
+<?php
+
+$url = 'https://api.sendgrid.com/';
+$user = 'kotentie';
+$pass = '500Boxes';
+$email = $_GET['email1'];
+$message = '<br> Hi ' . $_GET['first_name'] . ',<br><br> Thanks for expressing your interest in Boxc for sourcing products from China. <br><br>  We are a US based technology company that can match your needs with the best supplier in China. <br> <br> Most of our customers are able to source quality products from China at 50%-70% below US wholesale price.<br> <br>  I would love to have a 10 minute chat over the phone to get you started and to help you <br> <br>  create a personalized wholesale catalog.  What is a good time to call you ? <br><br><br> Thanks, <br> <br> David Kanel <br> <br>  CEO & Founder';
+
+$params = array(
+    'api_user'  => $user,
+    'api_key'   => $pass,
+    'to'        => $email,
+    'subject'   => 'Thanks for your interest in Boxc',
+    'html'      => $message,
+    'from'      => 'david@boxc.com',
+  );
+
+
+$request =  $url.'api/mail.send.json';
+
+// Generate curl request
+$session = curl_init($request);
+// Tell curl to use HTTP POST
+curl_setopt ($session, CURLOPT_POST, true);
+// Tell curl that this is the body of the POST
+curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
+// Tell curl not to return headers, but do return the response
+curl_setopt($session, CURLOPT_HEADER, false);
+curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+
+// obtain response
+$response = curl_exec($session);
+curl_close($session);
+
+// print everything out
+print_r($response);
+
+?>
+
 
 <!-- Google Code for leads Conversion Page -->
 <script type="text/javascript">
