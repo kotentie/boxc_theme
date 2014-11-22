@@ -24,11 +24,6 @@
 }
 
 
-h1, h2, h3, h4, h5, h6, p, small {
-
-  text-rendering: optimizeLegibility;
-
-}
 
 
 
@@ -196,6 +191,13 @@ h1, h2, h3, h4, h5, h6, p, small {
 .navbar-default.navbar-fixed-top {
   background-color: white;
   border-bottom: 1px solid gray;
+
+  a{
+    &:hover,
+    &:focus {
+    text-decoration: underline;
+  }
+  }
 }
 
 
@@ -209,13 +211,6 @@ h1, h2, h3, h4, h5, h6, p, small {
 }
 
 .navbar-nav {
-
-  li{
-    &:hover,
-    &:focus {
-    border-bottom: 2px;
-  }
-  }
 
  @media (min-width: @grid-float-breakpoint) {
    float: right;
@@ -252,6 +247,10 @@ h1, h2, h3, h4, h5, h6, p, small {
 
 #front-page-header .navbar-nav a {
   margin-top: 15px;
+  &:hover,
+    &:focus {
+    text-decoration: underline;
+  }
 } 
 
 .value-header{
