@@ -32,7 +32,7 @@
       <div class="value-header clearfix" style="display: none" id="value-header-2">
         <h1> Keep your inventory in China </h1> <h4>Let Boxc Pick, Pack and Ship Directly to your USA Customers.</h4>
           <div class="value-header-btn">
-            <a href="http://boxc.com/signup-shopify/" class="btn btn-success tada animated">Ship your first package for free</a>
+            <a href="https://accounts.boxc.com/register?redir=http://fbb.boxc.com/" class="btn btn-success tada animated">Get Started</a>
           </div>
       </div>
       <div class="row slide-button-container">
